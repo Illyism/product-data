@@ -1,0 +1,27 @@
+#!/usr/bin/env node
+
+var cluster = require('cluster');
+var os = require('os'),
+cpuCount = os.cpus().length;
+
+if (cluster.isMaster) {
+  for (var i = 0; i < cpuCount; i++) {
+    cluster.fork();
+  }
+  return;
+}
+
+var server = require('../server');
+var http = require('http');
+
+var port = process.env.PORT || 8085;
+server.set('port', port);
+
+var httpServer = http.createServer(server);
+
+httpServer.listen(port, '0.0.0.0');
+httpServer.on('listening', function () {
+  var addr = httpServer.address();
+  var bind = typeof addr === 'string' ? 'pipe ' + addr : 'port ' + addr.port;
+  console.log('Listening on ' + bind);
+});

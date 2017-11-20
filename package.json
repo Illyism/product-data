@@ -1,0 +1,29 @@
+{
+  "name": "solar-data-api",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "start": "node --max_old_space_size=4096 ./bin/www",
+    "test": "node_modules/grunt-cli/bin/grunt"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "async": "^2.1.4",
+    "body-parser": "^1.15.2",
+    "cheerio": "^1.0.0-rc.2",
+    "express": "^4.14.0",
+    "helmet": "^3.9.0",
+    "mongodb": "^2.2.33",
+    "morgan": "^1.7.0",
+    "superagent": "^3.8.1",
+    "superagent-cache": "^2.0.0"
+  },
+  "devDependencies": {
+    "grunt": "^1.0.1",
+    "grunt-cli": "^1.2.0",
+    "grunt-contrib-watch": "^1.0.0",
+    "grunt-mocha-cli": "^3.0.0",
+    "supertest": "^2.0.1"
+  }
+}
