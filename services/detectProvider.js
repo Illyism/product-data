@@ -9,7 +9,7 @@ module.exports = function (urlString) {
   const urlObject = new URL(urlString)
   const host = urlObject.host
     
-  if (host.indexOf('amazon.com') > -1) {
+  if (host.indexOf('amazon') > -1) {
     return 'amazon'
   }
   

@@ -9,10 +9,10 @@ module.exports = function () {
 
   // will print stacktrace
   this.use((err, req, res, next) => {
-    res.status(err.status || 500)
+    res.status(err.status || 400)
     res.send({
       status: 'error',
-      message: err.message,
+      reason_phrase: err.message,
       error: err,
       stack: err.stacktrace
     })

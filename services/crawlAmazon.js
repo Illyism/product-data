@@ -26,7 +26,7 @@ function getText ($, className) {
 }
 
 function getPrice ($, className) {
-  return parseFloat($(className).text().replace(/[^0-9\.]+/g, ''))
+  return parseFloat($(className).text().replace(',', '.').replace(/[^0-9\.]+/g, ''))
 }
 
 function getCurrency ($, className) {

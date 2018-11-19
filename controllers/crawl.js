@@ -13,7 +13,7 @@ exports.product = async function (req, res, next) {
     helper.startTimer('crawl_product')
     var body = req.query
     
-    if (!body.url) throw new Error('url parameter is required')
+    if (!body.url) throw new Error('Please enter a webshop URL')
     let result = {}
     
     const provider = detectProvider(body.url)
